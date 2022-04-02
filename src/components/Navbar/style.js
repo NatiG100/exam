@@ -4,9 +4,10 @@ export const StyledNavbar = styled.div`
     justify-content:space-between ;
     align-items:center ;
     width:100% ;
-    padding:20px;
-    padding-left:70px ;
-    padding-right:70px ;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color:#F9F9F9 ;
+    
 `;
 export const StyledBrand = styled.div`
 font-size:24px;
@@ -74,4 +75,10 @@ export const StyledNavigationIndicator = styled.div`
     margin-left:auto ;
     margin-right:auto ;
     border-radius:20px ;
+`;
+export const StyledDivider = styled.div`
+    border-bottom:1px solid #DEDEDE ;
+    width:100% ;
+    margin-left: auto;
+    margin-right: auto;
 `;

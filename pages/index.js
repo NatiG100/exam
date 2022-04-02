@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { useCounter } from '../src/provider/counter.provider'
 import { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import APARTMENT_REPORT from './../src/graphql/test';
+import Card from '../src/components/Card'
+import CardList from '../src/components/CardList'
+import { Cart } from '../src/components/Cart'
 
 export default function Home() {
   // const [value, setValue] = useState(0);
@@ -34,8 +36,14 @@ export default function Home() {
   //     data,
   //   })
   // }
-  const { loading, error, data } = useQuery(APARTMENT_REPORT);
-  if (loading) return (<div>Loading</div>);
-  if (error) return (<div>Error</div>);
-  if (data) return (<div>Data</div>);
+  // const { loading, error, data } = useQuery(APARTMENT_REPORT);
+  // if (loading) return (<div>Loading</div>);
+  // if (error) return (<div>Error</div>);
+  // if (data) return (<div>Data</div>);
+
+  return (
+    <>
+      <CardList />
+    </>
+  );
 }

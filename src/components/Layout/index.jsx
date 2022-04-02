@@ -1,12 +1,21 @@
 import React from 'react';
+import FilterSort from '../Filter';
 import Navbar from '../Navbar';
-import { StyledLyout } from './style';
+import {
+    StyledLyout,
+    StyledWrapper, StyledContent
+} from './style';
 
 const Layout = ({ children }) => {
     return (
         <StyledLyout>
             <Navbar />
-            {children}
+            <StyledWrapper>
+                <FilterSort />
+                <StyledContent>
+                    {children}
+                </StyledContent>
+            </StyledWrapper>
         </StyledLyout>
     );
 }

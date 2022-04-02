@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: "https://afaq-alzahbia-api.techawks.io/graphql",
+    uri: "https://shoplly-api.techawks.io/graphql",
     cache: new InMemoryCache(),
 });
 

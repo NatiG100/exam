@@ -1,14 +1,17 @@
 import { gql } from "@apollo/client";
 
-const APARTMENT_REPORT = gql`
-    query {
-        apartmentReport{
-            sold
-            available
-            bookedUp
-            total
+const PRODUCTS = gql`
+    query products($categoryId:String!){
+    products (categoryId:$categoryId){
+        name
+        productId
+        price
+        discount
+        images{
+        url
         }
+    }
     }
 `;
 
-export default APARTMENT_REPORT;
+export default PRODUCTS;

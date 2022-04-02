@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     StyledNavbar,
     StyledBrand,
@@ -7,13 +7,18 @@ import {
     StyledCartContainer,
     StyledCart,
     StyledCartBadge,
-    StyledNavigationIndicator
+    StyledNavigationIndicator,
+    StyledDivider
 
 } from './style';
 import Brand from "./../../assets/icons/logo.svg";
-import Cart from "./../../assets/icons/bag.svg";
+import CartIcon from "./../../assets/icons/bag.svg";
+import { Cart } from '../Cart';
 const Navbar = () => {
-    return (
+    const [open, setOpen] = useState(false);
+
+    return (<>
+        {open && <Cart setOpen={setOpen} />}
         <StyledNavbar>
             <StyledBrand>
                 <Brand />
@@ -33,13 +38,16 @@ const Navbar = () => {
                     about
                 </StyledNavigationItem>
             </StyledNavigation>
-            <StyledCartContainer>
+            <StyledCartContainer onClick={() => setOpen(true)}>
                 <StyledCart >
-                    <Cart />
+                    <CartIcon />
                 </StyledCart>
                 <StyledCartBadge>{3}</StyledCartBadge>
             </StyledCartContainer>
+
         </StyledNavbar>
+        <StyledDivider />
+    </>
     );
 }
 export default Navbar;
